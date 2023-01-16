@@ -1,5 +1,5 @@
 package my.practice;
-
+//test
 import java.util.Scanner;
 
 public class Practice {
