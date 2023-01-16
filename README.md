@@ -18,6 +18,7 @@
  ##  🔥 이번 주 문제
 |문제 이름|출처|주제|난이도|
 |:-------:|:--------:|:-------:|:-------:|
+|[잘라서 배열로 저장하기](https://school.programmers.co.kr/learn/courses/30/lessons/120913)|프로그래머스|코딩테스트 입문|LV 0|
 |[날짜 계산](https://www.acmicpc.net/problem/1476)|백준|브루트 포스|실버5|
 |[리모컨](https://www.acmicpc.net/problem/1107)|백준|브루트 포스|골드5|
 |[집합](https://www.acmicpc.net/problem/11723)|백준|브루트 포스-비트마스크|실버5|
