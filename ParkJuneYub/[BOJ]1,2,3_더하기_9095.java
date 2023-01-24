@@ -1,6 +1,6 @@
 걸린 시간 : 30분
 레벨 : 실버 3
-test
+tes
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
