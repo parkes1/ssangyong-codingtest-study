@@ -7,8 +7,8 @@ class Solution {
             if(i%2 == 1){
                 answer[i/2] =i;
             }
-        } 
-
+        }   
+hg
         return answer;
     }
 }
