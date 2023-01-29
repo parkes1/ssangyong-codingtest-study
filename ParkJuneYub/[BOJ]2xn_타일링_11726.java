@@ -1,3 +1,7 @@
+걸린 시간 : 20분
+레벨 : 실버 3
+
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
