@@ -23,7 +23,7 @@ public class Main {
 	         case "remove" :
 	            x = sc.nextInt();
 	            set.remove(x);
-	            break;
+	            break; 
 	         case "check" :
 	            x = sc.nextInt();
 	            if (set.contains(x))
