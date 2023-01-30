@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class BOJ1152번_단어의_개수 {
+public class Main {
 
 	public static void main(String[] args) {
 		
