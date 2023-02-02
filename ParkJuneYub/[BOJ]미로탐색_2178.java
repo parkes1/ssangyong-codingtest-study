@@ -1,11 +1,23 @@
-걸린 시간 : 70분
+걸린 시간 : 76분
 레벨 : 실버 1
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.StringTokenizer;
+
+class xy {
+	int x;
+	int y;
+	
+	xy(int x, int y) {
+		this.x = x;
+		this.y = y;
+	}
+}
 
 public class Main {
 	
@@ -16,26 +28,7 @@ public class Main {
 	static int[] Ymove = {0, 1, 0, -1}; // 12 3 6 9 시계방향
 	static boolean[][] visited;
 	
-	public static int dfs(int x, int y, int cnt) {
-		if(x != n-1 || y != m-1) {
-			
-			int ans = 10000;
-			
-			for(int i = 0; i < 4; i++) {
-				int newX = x + Xmove[i];
-				int newY = y + Ymove[i];
-				
-				if(isRange(newX, newY) && map[newX][newY] == 1 && visited[newX][newY]) {
-					visited[newX][newY] = false;
-					ans = Math.min(ans, dfs(newX, newY, cnt+1));
-					visited[newX][newY] = true;
-				}
-			}
-			cnt = ans;
-		}
-		
-		return cnt;
-	}
+
 	
 	public static boolean isRange(int x, int y) {
 		if(0 > x || x >= n || 0 > y || y >= m) return false;
@@ -52,7 +45,7 @@ public class Main {
 		map = new int[n][m];
 		visited = new boolean[n][m];
 		
-
+		Queue<xy> queue = new LinkedList<xy>();
 		
 		for(int i = 0; i < n; i++) {
 			
@@ -65,11 +58,37 @@ public class Main {
 			}
 		}
 		
-
-		
+		int ans = 1;
 		visited[0][0] = false;
-		System.out.println(dfs(0, 0, 1));
+		queue.offer(new xy(0, 0));
+		boolean flag = false;
 		
+		while(!queue.isEmpty()) {
+			int sz = queue.size(); // 큐를 통해 최단거리를 구하는 방법 = > 먼저 큐의 사이즈를 정하고 사이즈만큼 돌면 카운트한다. 
+			
+			for(int i = 0; i < sz; i++) {
+				
+				int x = queue.peek().x;
+				int y = queue.peek().y;
+				queue.poll();
+				
+				if(x == n-1 && y == m-1 ) {			// 목적지 도달 시 출력	현재 진행 단계가 반영이 안되길래 ans 시작을 1로 했다.
+					System.out.println(ans);
+					
+				}
+				
+				for(int j = 0; j < 4; j++) {
+					int newX = x + Xmove[j];
+					int newY = y + Ymove[j];
+					
+					if(isRange(newX, newY) && map[newX][newY] == 1 && visited[newX][newY]) {
+						queue.offer(new xy(newX, newY));
+						visited[newX][newY] = false;
+					}
+				}
+			}
+			
+			ans++;
+		}
 	}
 }
-
