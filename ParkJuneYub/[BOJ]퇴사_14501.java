@@ -14,11 +14,11 @@ public class Main {
 	public static int[] p;
 	
 	public static int work(int day, int reward) {
-		if(day == n) {
+		if(day == n) {             // 초기값 설정 -> 함수의 끝을 만든다.
 			return reward;
 		}
 		if(day > n) {
-			return -10000;
+			return -10000;          // 7일 초과 꽝
 		}
 		reward = Math.max(work(t[day] + day, reward+p[day]), work(day+1, reward));
 		return reward;
